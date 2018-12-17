@@ -19,17 +19,19 @@ const App = () => (
         </Toolbar>
       </AppBar>
     </Grid>
-    <Grid item xs={12}>
-      <BrowserRouter>
-        <Switch>
-          <Route
-            path="/"
-            exact
-            render={props => <TodoList todos={fakeTodos} {...props} />}
-          />
-          <Route path="/addTodo" component={AddToDo} />
-        </Switch>
-      </BrowserRouter>
+    <Grid item container justify="center">
+      <Grid item xs={10} sm={9} md={8}>
+        <BrowserRouter>
+          <Switch>
+            <Route
+              path="/"
+              exact
+              render={props => <TodoList todos={fakeTodos} {...props} />}
+            />
+            <Route path="/addTodo" component={AddToDo} />
+          </Switch>
+        </BrowserRouter>
+      </Grid>
     </Grid>
   </Grid>
 );
