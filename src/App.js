@@ -1,39 +1,43 @@
 import React from 'react';
-import AppBar from '@material-ui/core/AppBar';
 import Grid from '@material-ui/core/Grid';
-import Toolbar from '@material-ui/core/es/Toolbar';
-import Typography from '@material-ui/core/Typography';
 import { BrowserRouter, Route, Switch } from 'react-router-dom';
+import { withStyles } from '@material-ui/core/es';
+import * as PropTypes from 'prop-types';
 import TodoList from './components/TodoList';
 import { todos as fakeTodos } from './data/todos';
 import AddToDo from './components/AddTodo';
+import NavBar from './components/NavBar';
 
-const App = () => (
+const styles = ({ spacing }) => ({
+  mainContent: {
+    paddingTop: spacing.unit * 3,
+  },
+});
+
+const App = ({ classes }) => (
   <Grid container spacing={16} direction="column">
-    <Grid item>
-      <AppBar position="static">
-        <Toolbar>
-          <Typography variant="h5" color="inherit">
-            To Do App
-          </Typography>
-        </Toolbar>
-      </AppBar>
-    </Grid>
-    <Grid item container justify="center">
+    <NavBar />
+    <Grid container justify="center">
       <Grid item xs={10} sm={9} md={8}>
-        <BrowserRouter>
-          <Switch>
-            <Route
-              path="/"
-              exact
-              render={props => <TodoList todos={fakeTodos} {...props} />}
-            />
-            <Route path="/addTodo" component={AddToDo} />
-          </Switch>
-        </BrowserRouter>
+        <div className={classes.mainContent}>
+          <BrowserRouter>
+            <Switch>
+              <Route
+                path="/"
+                exact
+                render={props => <TodoList toDos={fakeTodos} {...props} />}
+              />
+              <Route path="/add" component={AddToDo} />
+            </Switch>
+          </BrowserRouter>
+        </div>
       </Grid>
     </Grid>
   </Grid>
 );
 
-export default App;
+App.propTypes = {
+  classes: PropTypes.object.isRequired,
+};
+
+export default withStyles(styles)(App);

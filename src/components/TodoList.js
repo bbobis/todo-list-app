@@ -5,14 +5,14 @@ import Fab from '@material-ui/core/Fab';
 import AddIcon from '@material-ui/icons/Add';
 import TodoItem from './TodoItem';
 
-const TodoList = ({ todos }) => (
+const TodoList = ({ toDos }) => (
   <Grid container spacing={24}>
     <Grid container item justify="flex-end">
-      <Fab color="primary" href="/addToDo">
+      <Fab color="primary" href="/add">
         <AddIcon />
       </Fab>
     </Grid>
-    {todos.map(({ id, title, description }) => (
+    {toDos.map(({ id, title, description }) => (
       <Grid container direction="column" item key={id}>
         <TodoItem title={title} description={description} />
       </Grid>
@@ -21,10 +21,10 @@ const TodoList = ({ todos }) => (
 );
 
 TodoList.defaultProps = {
-  todos: [],
+  toDos: [],
 };
 TodoList.propTypes = {
-  todos: PropTypes.arrayOf(PropTypes.object),
+  toDos: PropTypes.arrayOf(PropTypes.object),
 };
 
 export default TodoList;
