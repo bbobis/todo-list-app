@@ -1,0 +1,19 @@
+{
+  "todos": [
+    {
+      "id": 1,
+      "title": "Study for exam",
+      "description": "Lorem"
+    },
+    {
+      "id": 2,
+      "title": "Clean the house",
+      "description": "Euismod lacinia at quis risus sed vulputate odio. Ipsum dolor sit amet consectetur adipiscing elit pellentesque habitant. At consectetur lorem donec massa sapien faucibus. Duis tristique sollicitudin nibh sit. Quam viverra orci sagittis eu volutpat odio facilisis mauris sit. Lacinia quis vel eros donec ac odio. Et malesuada fames ac turpis egestas. Elementum integer enim neque volutpat ac tincidunt vitae. Mi eget mauris pharetra et. Sed vulputate mi sit amet mauris commodo quis."
+    },
+    {
+      "id": 3,
+      "title": "Do groceries",
+      "description": "Enim diam vulputate ut pharetra sit amet aliquam id diam. Suspendisse ultrices gravida dictum fusce ut placerat. Ultrices in iaculis nunc sed augue. Mauris augue neque gravida in fermentum et sollicitudin ac. Et ligula ullamcorper malesuada proin libero. Quis vel eros donec ac odio tempor orci dapibus ultrices. Diam phasellus vestibulum lorem sed risus ultricies. Nibh tortor id aliquet lectus proin nibh nisl condimentum. "
+    }
+  ]
+}
