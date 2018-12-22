@@ -3,9 +3,8 @@ import Grid from '@material-ui/core/Grid';
 import { BrowserRouter, Route, Switch } from 'react-router-dom';
 import { withStyles } from '@material-ui/core/es';
 import * as PropTypes from 'prop-types';
-import TodoList from './components/TodoList';
-import { todos as fakeTodos } from './data/todos';
-import AddToDo from './components/AddTodo';
+import TodoList from './containers/TodoList';
+import AddToDo from './containers/AddTodo';
 import NavBar from './components/NavBar';
 
 const styles = ({ spacing }) => ({
@@ -22,11 +21,7 @@ const App = ({ classes }) => (
         <div className={classes.mainContent}>
           <BrowserRouter>
             <Switch>
-              <Route
-                path="/"
-                exact
-                render={props => <TodoList toDos={fakeTodos} {...props} />}
-              />
+              <Route path="/" exact component={TodoList} />
               <Route path="/add" component={AddToDo} />
             </Switch>
           </BrowserRouter>
